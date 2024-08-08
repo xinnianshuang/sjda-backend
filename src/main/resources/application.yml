@@ -26,11 +26,11 @@ spring:
     password: root
   # Redis 配置
   # todo 需替换配置，然后取消注释
-#  redis:
-#    database: 1
-#    host: localhost
-#    port: 6379
-#    timeout: 5000
+  redis:
+    database: 1
+    host: localhost
+    port: 6379
+    timeout: 5000
 #    password: 123456
   # Elasticsearch 配置
   # todo 需替换配置，然后取消注释
@@ -101,3 +101,6 @@ knife4j:
         api-rule: package
         api-rule-resources:
           -   com.sj.sjda.controller
+# AI 配置
+ai:
+  apiKey: "79c835f4bfbaeea4cf68af27773655d1.GfBAo1uokelIcQdb"
