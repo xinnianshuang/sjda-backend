@@ -3,6 +3,7 @@ package com.sj.sjda.service.impl;
 import cn.hutool.core.collection.CollUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.sj.sjda.common.ErrorCode;
 import com.sj.sjda.constant.CommonConstant;
@@ -10,8 +11,8 @@ import com.sj.sjda.exception.ThrowUtils;
 import com.sj.sjda.mapper.UserAnswerMapper;
 import com.sj.sjda.model.dto.userAnswer.UserAnswerQueryRequest;
 import com.sj.sjda.model.entity.App;
-import com.sj.sjda.model.entity.UserAnswer;
 import com.sj.sjda.model.entity.User;
+import com.sj.sjda.model.entity.UserAnswer;
 import com.sj.sjda.model.vo.UserAnswerVO;
 import com.sj.sjda.model.vo.UserVO;
 import com.sj.sjda.service.AppService;
@@ -25,7 +26,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -33,10 +33,13 @@ import java.util.stream.Collectors;
 
 /**
  * 用户答案服务实现
+ *
+sjda
  */
 @Service
 @Slf4j
 public class UserAnswerServiceImpl extends ServiceImpl<UserAnswerMapper, UserAnswer> implements UserAnswerService {
+
     @Resource
     private UserService userService;
 
@@ -54,10 +57,12 @@ public class UserAnswerServiceImpl extends ServiceImpl<UserAnswerMapper, UserAns
         ThrowUtils.throwIf(userAnswer == null, ErrorCode.PARAMS_ERROR);
         // 从对象中取值
         Long appId = userAnswer.getAppId();
+        Long id = userAnswer.getId();
         // 创建数据时，参数不能为空
         if (add) {
             // 补充校验规则
             ThrowUtils.throwIf(appId == null || appId <= 0, ErrorCode.PARAMS_ERROR, "appId 非法");
+            ThrowUtils.throwIf(id == null || id <= 0, ErrorCode.PARAMS_ERROR, "id 非法");
         }
         // 修改数据时，有参数则校验
         // 补充校验规则

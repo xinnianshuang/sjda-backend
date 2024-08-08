@@ -1,5 +1,5 @@
 -- 切换库
-use sjdada;
+use sjda;
 
 -- 用户表初始数据
 INSERT INTO user (id, userAccount, userPassword, unionId, mpOpenId, userName, userAvatar, userProfile, userRole,
