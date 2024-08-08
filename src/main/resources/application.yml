@@ -123,14 +123,15 @@ cos:
     secretKey: xxx
     region: xxx
     bucket: xxx
-# 接口文档配置
 knife4j:
   enable: true
   openapi:
-    title: "接口文档"
-    version: 1.0
+    title: Knife4j官方文档
+    version: v4.0
+    license: Apache 2.0
     group:
-      default:
+      test1:
+        group-name: 分组名称
         api-rule: package
         api-rule-resources:
           - com.sj.sjda.controller
